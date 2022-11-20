@@ -26,8 +26,8 @@ public class GameBoard {
 
     }
 
-    public void addPlayer(PLayer player1){
-        players.add(player2);
+    public void addPlayer(Player player1){
+        players.add(player1);
     }
 
 
@@ -76,7 +76,7 @@ public class GameBoard {
         int count = 0;
 
         for (Player person : players){
-            if (person. checkBankruptcy()){
+            if (person.checkBankruptcy()){
                 count += 1;
 
             }
