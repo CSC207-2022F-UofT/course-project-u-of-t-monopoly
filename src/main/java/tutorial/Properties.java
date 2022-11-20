@@ -47,6 +47,14 @@ public class Properties {
     public String getColor(){
         return this.color;
     }
+    
+    public int getMortgageValue(){
+        return this.mortgageValue;
+    }
+    
+    public List<Building> getBuildingsConstructed(){
+        return this.buildingsConstructed
+    }
 
     public boolean OwnedByPlayer(){
         return this.Owner != null;
@@ -70,6 +78,9 @@ public class Properties {
         this.buildingsConstructed.add(ho);}
     }
 
+    public void removeBuilding(){
+        this.buildingsConstructed = new ArrayList<>();
+    }
 
 
 }
