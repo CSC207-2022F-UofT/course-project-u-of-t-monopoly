@@ -53,7 +53,7 @@ public class Properties {
     }
     
     public List<Building> getBuildingsConstructed(){
-        return this.buildingsConstructed
+        return this.buildingsConstructed;
     }
 
     public boolean OwnedByPlayer(){
