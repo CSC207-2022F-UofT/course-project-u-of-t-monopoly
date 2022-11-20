@@ -3,7 +3,7 @@ package tutorial;
 public class Bank {
 
 
-    //
+
     public Bank() {
 
     }
