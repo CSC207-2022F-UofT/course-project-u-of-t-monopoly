@@ -1,8 +1,5 @@
 package tutorial;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 public class ChanceCard extends OpportunityCard {
 
     int moneychange;
