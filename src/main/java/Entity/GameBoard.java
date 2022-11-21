@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 public class GameBoard {
-    public List<Integer> players;
-    public Integer[] board = new Integer[40];
+    public List<Player> players;
+    public Properties[] board = new Properties[40];
     //private int goPosition = 0;
     //private int jailPosition = 30;
     //private int[] chanceCard = new int[]{7, 22, 36};
@@ -20,7 +20,7 @@ public class GameBoard {
 
     // monopoly overall class that will keep game organized
 
-    public GameBoard(Player inputPlayers, Properties[] lstProperties){
+    public GameBoard(List<Player> inputPlayers, Properties[] lstProperties){
         this.players = inputPlayers;
         this.board = lstProperties;
 
