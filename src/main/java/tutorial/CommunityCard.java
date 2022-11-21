@@ -8,16 +8,7 @@ public class CommunityCard extends OpportunityCard{
     int movement;
     String cardname;
 
-    //public CommunityCard() {
-    //    super();
-    //    communitycard = new ArrayList<String>();
-    //    communitycard.add("Advance to \"Go\". (Collect $200)");
-    //    communitycard.add("Bank error in your favor. Collect $200.");
-    //    communitycard.add("Doctor's fees. {fee} Pay $50.");
-    //    communitycard.add("Get Out of Jail Free.");
-    //    communitycard.add("Go to Jail.");
-        //set up cards in community card deck
-    //}
+
 
     public CommunityCard(String cardname, int moneyamount, int displacement) {
         super();
