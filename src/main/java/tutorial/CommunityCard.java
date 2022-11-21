@@ -14,6 +14,7 @@ public class CommunityCard extends OpportunityCard{
         communitycard.add("Doctor's fees. {fee} Pay $50.");
         communitycard.add("Get Out of Jail Free.");
         communitycard.add("Go to Jail.");
+        //set up cards
     }
 
     public String getCard(String cardtype) {

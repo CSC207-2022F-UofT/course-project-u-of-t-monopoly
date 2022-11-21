@@ -12,6 +12,7 @@ public class ChanceCard extends OpportunityCard{
         chancecard = new ArrayList<String>();
         chancecard.add("Get Out of Jail Free.");
         chancecard.add("Go to Jail.");
+        //set up cards
     }
 
     public String getCard(String cardtype) {
