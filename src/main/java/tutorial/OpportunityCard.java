@@ -1,7 +1,5 @@
 package tutorial;
 
-import java.util.ArrayList;
-
 abstract class OpportunityCard {
     String cardname;
     int moneychange;
