@@ -20,10 +20,10 @@ public class Jail {
         // player is locked in jail up to a max of 3 turns
         // skip turn
         // player can either bail or attempt to roll a double, or buy a get out of jail free card from another player
-        player.rollDice();             // Will there be a separate class for rolling dice?
-        if (player.rolledDouble) {     // How are double dice roll kept track of? boolean? during the rollDice() method?
-            this.outOfJail();
-        }
+        // player.rollDice();             // Will there be a separate class for rolling dice?
+        // (player.rolledDouble) {     // How are double dice roll kept track of? boolean? during the rollDice() method?
+            // this.outOfJail();
+        // }
     }
 
     public void outOfJail() {
