@@ -31,20 +31,7 @@ public class GameBoard {
     }
 
 
-    public ArrayList<Integer> rollDice(){
-        ArrayList<Integer> rolls = new ArrayList<Integer>();
-        Random num = new Random();
-        int max = 6;
-        int min = 1;
-        int randnum = num.nextInt((max - min) + 1) + min;
-        int randnum2 = num.nextInt((max-min) + 1) + min;
-        rolls.add(randnum);
-        rolls.add(randnum2);
-        //Or return the sum of the rolls
-        //int sum = randnum + randnum2;
-        //return sum;
-        return rolls;
-    }
+   
 
     public int getNumPlayers(){
         return players.size();
