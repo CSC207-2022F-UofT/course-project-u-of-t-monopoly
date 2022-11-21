@@ -7,8 +7,9 @@ import java.util.List;
 public class Properties {
 
     // entity Properties
+    private String name;
     private Integer price;
-
+    
     private Integer rent;
     private boolean utilities;
     private String color;
@@ -18,7 +19,8 @@ public class Properties {
     private Player Owner;
 
 
-    public Properties(Integer price, Integer rent, boolean utilities, String color, Integer mortgageValue) {
+    public Properties(String name, Integer price, Integer rent, boolean utilities, String color, Integer mortgageValue) {
+        this.name = name;
         this.price = price;
         this.rent  = rent;
         this.utilities = utilities;
