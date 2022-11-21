@@ -3,13 +3,15 @@ package tutorial;
 import java.util.ArrayList;
 
 abstract class OpportunityCard {
-    ArrayList<String> communitycard;
-    ArrayList<String> chancecard;
+    String cardname;
+    int moneychange;
+    int movement;
 
     public OpportunityCard() {}
 
-    abstract String getCard(String cardtype);
+    abstract String getCard();
     //will be implemented in child class
 
-    abstract void updateDeck();
+    abstract int getMovement();
+    abstract int getMoneychange();
 }
