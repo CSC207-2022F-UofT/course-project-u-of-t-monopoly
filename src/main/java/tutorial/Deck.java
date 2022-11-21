@@ -55,4 +55,12 @@ public class Deck {
         return false;
     }
     // cardtype should only be either "community" or "chance".
+
+    public void addCommunityCard(CommunityCard card) {
+        communitycardlist.add(card);
+    }
+
+    public void addChanceCard(ChanceCard card) {
+        chancecardlist.add(card);
+    }
 }
