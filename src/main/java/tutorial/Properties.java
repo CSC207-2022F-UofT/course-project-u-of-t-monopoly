@@ -63,7 +63,11 @@ public class Properties {
         // other classes may need this method.
         return this.buildingsConstructed;
     }
-
+    
+    public Player getOwner(){
+        return this.Owner;
+    }
+    
     public boolean OwnedByPlayer(){
         return this.Owner != null;
     }
