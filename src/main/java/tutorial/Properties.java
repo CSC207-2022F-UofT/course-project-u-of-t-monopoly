@@ -29,6 +29,10 @@ public class Properties {
         this.buildingsConstructed = new ArrayList<>();
         this.Owner = null;
     }
+    
+    public String getName(){
+        return this.name;
+    }
 
     public int getPrice(){
         // this returns the total price of this property (since the prices are all set to be private
