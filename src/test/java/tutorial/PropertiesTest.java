@@ -1,5 +1,7 @@
 package tutorial;
 
+
+
 import org.junit.Test;
 import org.junit.*;
 
@@ -8,19 +10,18 @@ import static org.junit.Assert.*;
 import java.io.*;
 import java.util.Optional;
 
-public class PropertiesTest {
-
+public class BuyPropertyProcessorTest {
 
     @Test
     public void testGetPrice1() {
-        Properties p = new Properties(100, 30, false, "red", 50);
+        Properties p = new Properties("A",100, 30, false, "red", 50);
         assertEquals(100, p.getPrice());
 
     }
 
     @Test
     public void testGetPrice2() {
-        Properties p = new Properties(100, 30, false, "red", 50);
+        Properties p = new Properties("B",100, 30, false, "red", 50);
         Hotel h1 = new Hotel(300, 50, 150);
         Hotel h2 = new Hotel(400, 70, 200);
         House h3 = new House(100, 10, 50);
@@ -32,14 +33,14 @@ public class PropertiesTest {
 
     @Test
     public void testGetRent1() {
-        Properties p = new Properties(100, 30, false, "red", 50);
+        Properties p = new Properties("C", 100, 30, false, "red", 50);
         assertEquals(30, p.getRent());
 
     }
 
     @Test
     public void testGetRent2() {
-        Properties p = new Properties(100, 30, false, "red", 50);
+        Properties p = new Properties("D", 100, 30, false, "red", 50);
         Hotel h1 = new Hotel(300, 50, 150);
         Hotel h2 = new Hotel(400, 70, 200);
         House h3 = new House(100, 10, 50);
@@ -51,7 +52,7 @@ public class PropertiesTest {
 
     @Test
     public void testResetOwner() {
-        Properties p = new Properties(100, 30, false, "red", 50);
+        Properties p = new Properties("E",100, 30, false, "red", 50);
         assertFalse(p.OwnedByPlayer());
 
 
