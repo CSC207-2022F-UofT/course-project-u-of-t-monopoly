@@ -90,16 +90,10 @@ public class Properties {
         this.Owner = null;
     }
 
-    public void buildHouse(House h) {
-        // call this method to build a house, note that utilities cannot be improved
+    public void buildBuilding(Building b) {
+        // call this method to build, note that utilities cannot be improved
         if (!this.utilities){
-            this.buildingsConstructed.add(h);}
-    }
-
-    public void buildHotel(Hotel ho) {
-        // call this method to build a hotel, note that utilities cannot be improved
-        if (!this.utilities){
-        this.buildingsConstructed.add(ho);}
+            this.buildingsConstructed.add(b);}
     }
 
     public void removeBuilding(){
