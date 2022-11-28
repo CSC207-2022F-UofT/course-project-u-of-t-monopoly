@@ -11,38 +11,56 @@ public class Jail {
     private int turnsInJail;
     private boolean inJail;
 
+    /**
+     * Initialize Jail Object
+     *
+     * @param p Player
+     */
     public Jail(Player p) {
         player = p;
         turnsInJail = 0;
         inJail = true;
     }
 
+    /**
+     * While suspended, Player can attempt to roll doubles to get out
+     *
+     * While in Jail, Player cannot move from their position
+     * Their turn is suspended up to 3 turns, they can attempt to bail, or roll to get out
+     * Player can still conduct activities such as collect rent, auction, mortgage, etc
+     */
     public void turnSuspended() {
-        // player can still conduct activities, collect rent, auction, mortgage, et
-        // player is locked in jail up to a max of 3 turns
-        // skip turn
-        // player can either bail or attempt to roll a double, or buy a get out of jail free card from another player
-        ArrayList<Integer> dice = player.rollDice();             // Will there be a separate class for rolling dice?
-        if (dice.get(1) == dice.get(2)) {     // How are double dice roll kept track of? boolean? during the rollDice() method?
+        ArrayList<Integer> dice = player.rollDice();
+        if ((int) dice.get(1) == (int) dice.get(2)) {
             this.outOfJail();
         }
     }
 
+    /**
+     * Player moves out of jail, the instance variables resets
+     *
+     * Player moves out of jail after rolling doubles (Player moves amount thrown, double rule do not apply)
+     * or by paying bail (see payBail)
+     */
     public void outOfJail() {
-        // roll doubles, player moves amount thrown. double rule do not apply
-        // if (rolledDoubles) player.move() the rolled number, if payBail(), roll and move
         this.inJail = false;
         turnsInJail = 0;
     }
 
+    /**
+     * Player pays $50 to the bank
+     *
+     * Player can pay bail either before first or second turn
+     * Player must pay bail at third turn
+     */
     public void payBail() {
-        // $50
-        // either pay before first or second turn dice roll, double roll applies
-        // must after third turn
-
         player.loseMoney(50); // lose to the bank
     }
 
+    /**
+     * The followings are all getters and setters for the instance variable
+     * @return instance variables
+     */
     public int getTurnsInJail() {
         return turnsInJail;
     }
@@ -59,4 +77,3 @@ public class Jail {
         this.inJail = inJail;
     }
 }
-// Temporary
