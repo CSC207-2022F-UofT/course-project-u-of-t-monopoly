@@ -24,9 +24,9 @@ public class PropertiesTest {
         Hotel h1 = new Hotel(300, 50, 150);
         Hotel h2 = new Hotel(400, 70, 200);
         House h3 = new House(100, 10, 50);
-        p.buildHotel(h1);
-        p.buildHotel(h2);
-        p.buildHouse(h3);
+        p.buildBuilding(h1);
+        p.buildBuilding(h2);
+        p.buildBuilding(h3);
         assertEquals(900, p.getPrice());
     }
 
@@ -43,9 +43,9 @@ public class PropertiesTest {
         Hotel h1 = new Hotel(300, 50, 150);
         Hotel h2 = new Hotel(400, 70, 200);
         House h3 = new House(100, 10, 50);
-        p.buildHotel(h1);
-        p.buildHotel(h2);
-        p.buildHouse(h3);
+        p.buildBuilding(h1);
+        p.buildBuilding(h2);
+        p.buildBuilding(h3);
         assertEquals(160, p.getRent());
     }
 
