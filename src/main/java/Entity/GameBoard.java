@@ -51,7 +51,7 @@ public class GameBoard {
     }
 
     public void movePlayer(Player player1, int movement){
-        player1.location = (player1.location + movement)%40;
+        player1.playerPosition = (player1.playerPosition + movement)%40;
         //update player posisiton with index
         //how are we keeping track of player location
 
