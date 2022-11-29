@@ -3,10 +3,14 @@ package Tutorial;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+// create a GameBoard class with a list of players and a board (array of properties)
+// The class has methods to find property tiles, by name and index
+// The class can return both the board and players list
+// The class can move players, add players, and set the next turn (to a player)
+// The class has the functionality to check the game end. 
 public class GameBoard {
-    public List<Player> players;
-    public Properties[] board = new Properties[40];
+    private List<Player> players;
+    private Properties[] board = new Properties[40];
     //private int goPosition = 0;
     //private int jailPosition = 30;
     //private int[] chanceCard = new int[]{7, 22, 36};
@@ -29,13 +33,17 @@ public class GameBoard {
     public void addPlayer(Player player1){
         players.add(player1);
     }
-
-
+    
+    public List<Player> getPlayers(){
+        return this.players;
+    }
+    
+    public Properties[] getProperties(){
+        return this.board;
+    }
    
-
     public int getNumPlayers(){
         return players.size();
-
     }
 
     public Properties getTile(int index){
