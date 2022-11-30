@@ -10,6 +10,15 @@ public class UserPayRent {
         this.property = tile;
     }
 
+    
+    /**
+     * Returns a string based on the money owned by the player.
+     * If non-sufficient funds - players money goes to zero
+     * owner of property gets the remaining funds
+     * If sufficient funds, player's money is decreased by the value of hte rent of the property landed on
+     * Owners money increases by the property's rent
+     * @return string based on players money
+     */
     public String PayRent(){
         //check to see if the player can pay rent.
         // If they dont have enough funds they lose all their funds and are bankrupt
