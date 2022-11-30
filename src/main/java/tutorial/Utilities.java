@@ -1,17 +1,25 @@
 package tutorial;
 
 public class Utilities {
-    String owned_player;
+    int player_id;
+    //subject to change as we have not decided which to use to indicate the owner.
 
-    int num_rolls;
+    String name;
 
-    public Utilities(String owned_player, int num_rolls){
-        this.owned_player = owned_player;
-        this.num_rolls = num_rolls;
+    public Utilities(String name){
+        this.name = name;
     }
 
-    public int getMoneyChange1(){return 4 * this.num_rolls;}
+    public String getName(){return this.name;}
 
-    public int getMoneyChange2(){return 10 * this.num_rolls;}
+    public void setOwner(int player_id){
+        this.player_id = player_id;
+    }
+
+    public int getOwner(){return this.player_id;}
+
+    public int getMoneyChange1(int num_rolls){return 4 * num_rolls;}
+
+    public int getMoneyChange2(int num_rolls){return 10 * num_rolls;}
 
 }
