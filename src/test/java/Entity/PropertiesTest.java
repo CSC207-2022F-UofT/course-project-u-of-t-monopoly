@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 import java.io.*;
 import java.util.Optional;
 
-public class BuyPropertyProcessorTest {
+public class PropertiesTest {
 
     @Test
     public void testGetPrice1() {
