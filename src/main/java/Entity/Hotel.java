@@ -1,4 +1,4 @@
-package tutorial;
+package Entity;
 
 public class Hotel extends Building{
     //subclass of Building
