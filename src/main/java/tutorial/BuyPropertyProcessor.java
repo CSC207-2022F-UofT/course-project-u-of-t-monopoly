@@ -1,4 +1,6 @@
-package tutorial;
+package UseCase;
+import Entity.Player;
+import Entity.Properties;
 
 public class BuyPropertyProcessor {
     private Player player;
@@ -10,15 +12,17 @@ public class BuyPropertyProcessor {
         this.properties = properties;
     }
 
-    public boolean BuyProperty() {
+    public String BuyProperty() {
         if (this.player.getMoney() >= this.properties.getPrice()) {
             if (!this.properties.OwnedByPlayer()){
                 this.player.loseMoney(this.properties.getPrice());
                 this.properties.resetOwner(this.player);
-                return true;
+                return "Purchase successful";
             }
         }
-        return false;
+        UserPayRent upr = new UserPayRent(this.player, this.properties);
+        String response = upr.PayRent();
+        return response;
         // we also need to check whether this player's position on the board is the position of this property, so JUST
         // after the player moved, controller decide whether to call this method.
         // So in controller, the code looks like: if (processor.BuyProperty()) {do something such as call presentor. ...}
