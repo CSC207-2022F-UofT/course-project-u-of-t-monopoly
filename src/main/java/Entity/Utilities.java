@@ -2,51 +2,26 @@ package Entity;
 
 public class Utilities {
     private Player owned_player;
-    private int player_id;
-    //subject to change as we have not decided which to use to indicate the owner.
 
     private int price;
-    int num_rolls;
+
     private String name;
 
-    /**
-     * Intialize a Utilites object given the inputted Player name and the number of rolls multiplier
-     * @param owned_player the string representing the name of the owned player
-     * @param num_rolls the number of rolls of the last turn (for pay rent functionality)
-     */
-    public Utilities(String owned_player, int num_rolls) {
-        this.name = owned_player;
-        this.num_rolls = num_rolls;
-    }
+    private int mortgageValue;
+
 
     /**
      * Intialize a Utilites object given the inputted Player object (owner) and the num_rolls,
      * along with the name of the Utilities object
-     * @param owner the player that owns this utility tile
-     * @param num_rolls the number of rolls for the rent functionality
      * @param name the name of the utility tile
      * @param prices the price to buy the utilities tile
      */
-    public Utilities(String name, int num_rolls, int prices) {
+    public Utilities(String name, int prices) {
         this.owned_player = null;
-        this.num_rolls = num_rolls;
         this.name = name;
         this.price = prices;
+        this.mortgageValue = prices/2;
     }
-
-    /**
-     * Create a Utilities object based on the inputted name
-     * @param name the name of the utility tile
-     */
-    public Utilities(String name){
-        this.name = name;
-    }
-
-    /**
-     * return the money change that would occur to a player for landing on the Utilities object
-     * @return money change to a Player landing on the Utilities
-     */
-    public int getMoneyChange1(){return 4 * this.num_rolls;}
 
 
     /**
@@ -61,11 +36,7 @@ public class Utilities {
      */
     public int getPrice(){return this.price;}
 
-    /**
-     * Returns the money change if 2 utilities are owned by the same owner
-     * @return the money change if 2 utilites are owned by the same owner
-     */
-    public int getMoneyChange2(){return 10 * this.num_rolls;}
+
 
     /**
      * Set the owner of this utility property to player1
