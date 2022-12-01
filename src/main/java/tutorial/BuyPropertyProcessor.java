@@ -20,9 +20,8 @@ public class BuyPropertyProcessor {
                 return "Purchase successful";
             }
         }
-        UserPayRent upr = new UserPayRent(this.player, this.properties);
-        String response = upr.PayRent();
-        return response;
+      
+        return "You don't have enought money";
         // we also need to check whether this player's position on the board is the position of this property, so JUST
         // after the player moved, controller decide whether to call this method.
         // So in controller, the code looks like: if (processor.BuyProperty()) {do something such as call presentor. ...}
