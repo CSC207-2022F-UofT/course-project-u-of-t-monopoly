@@ -74,6 +74,12 @@ public class Utilities {
      * @return the money change based on the num_rolls
      */
     public int getMoneyChange2(int num_roll){return 10 * num_roll;}
+    
+    /**
+     * return the mortgage value of the property 
+     * @return this.mortgageValue for the Utilities object 
+     */
+    public int getMortgageValue(){return this.mortgageValue}
 
 }
 
