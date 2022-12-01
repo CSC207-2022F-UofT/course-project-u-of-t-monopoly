@@ -18,7 +18,7 @@ public class UserPayRentUtilityTest {
         int rolls = 376;
         Player player1 = new Player("BOB", 1);
         Player owner  = new Player("BILL", 2);
-        Utilities utility = new Utilities("BASE", rolls, 100);
+        Utilities utility = new Utilities("BASE", 100);
         utility.setOwner(owner);
         UserPayRentUtility action = new UserPayRentUtility(utility, player1, rolls);
         action.payRentOneOwner();
@@ -33,7 +33,7 @@ public class UserPayRentUtilityTest {
         int rolls = 400;
         Player player1 = new Player("BOB", 1);
         Player owner  = new Player("BILL", 2);
-        Utilities utility = new Utilities("BASE", rolls, 100);
+        Utilities utility = new Utilities("BASE", 100);
         utility.setOwner(owner);
         UserPayRentUtility action = new UserPayRentUtility(utility, player1, rolls);
         action.payRentOneOwner();
@@ -48,7 +48,7 @@ public class UserPayRentUtilityTest {
         int rolls = 12;
         Player player1 = new Player("BOB", 1);
         Player owner  = new Player("BILL", 2);
-        Utilities utility = new Utilities("BASE", rolls, 100);
+        Utilities utility = new Utilities("BASE", 100);
         utility.setOwner(owner);
         UserPayRentUtility action = new UserPayRentUtility(utility, player1, rolls);
         action.payRentOneOwner();
@@ -62,7 +62,7 @@ public class UserPayRentUtilityTest {
         int rolls = 376;
         Player player1 = new Player("BOB", 1);
         Player owner  = new Player("BILL", 2);
-        Utilities utility = new Utilities("BASE", rolls, 100);
+        Utilities utility = new Utilities("BASE",100);
         utility.setOwner(owner);
         UserPayRentUtility action = new UserPayRentUtility(utility, player1, rolls);
         action.payRentTwoOwner();
@@ -77,7 +77,7 @@ public class UserPayRentUtilityTest {
         int rolls = 10;
         Player player1 = new Player("BOB", 1);
         Player owner  = new Player("BILL", 2);
-        Utilities utility = new Utilities("BASE", rolls, 100);
+        Utilities utility = new Utilities("BASE", 100);
         utility.setOwner(owner);
         UserPayRentUtility action = new UserPayRentUtility(utility, player1, rolls);
         action.payRentTwoOwner();
