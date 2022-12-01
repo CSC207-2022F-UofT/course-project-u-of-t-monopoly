@@ -1,4 +1,4 @@
-package tutorial;
+package Entity;
 
 public class House extends Building{
     //subclass of Building
