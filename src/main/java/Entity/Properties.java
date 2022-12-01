@@ -1,4 +1,4 @@
-package tutorial;
+package Entity;
 
 import javax.lang.model.type.UnionType;
 import java.util.ArrayList;
@@ -11,7 +11,6 @@ public class Properties {
     private Integer price;
     
     private Integer rent;
-    private boolean utilities;
     private String color;
     private Integer mortgageValue;
     private List<Building> buildingsConstructed;
@@ -19,11 +18,10 @@ public class Properties {
     private Player Owner;
 
 
-    public Properties(String name, Integer price, Integer rent, boolean utilities, String color, Integer mortgageValue) {
+    public Properties(String name, Integer price, Integer rent, String color, Integer mortgageValue) {
         this.name = name;
         this.price = price;
         this.rent  = rent;
-        this.utilities = utilities;
         this.color = color;
         this.mortgageValue = mortgageValue;
         this.buildingsConstructed = new ArrayList<>();
@@ -92,8 +90,8 @@ public class Properties {
 
     public void buildBuilding(Building b) {
         // call this method to build, note that utilities cannot be improved
-        if (!this.utilities){
-            this.buildingsConstructed.add(b);}
+
+        this.buildingsConstructed.add(b);
     }
 
     public void removeBuilding(){
