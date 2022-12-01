@@ -1,4 +1,4 @@
-package tutorial;
+package Entity;
 
 public abstract class Building{
     // Abstract class Building
