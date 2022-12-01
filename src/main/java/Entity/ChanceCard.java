@@ -1,4 +1,4 @@
-package tutorial;
+package Entity;
 
 import java.util.ArrayList;
 import java.util.Random;
