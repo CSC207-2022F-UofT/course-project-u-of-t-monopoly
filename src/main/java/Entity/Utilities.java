@@ -27,8 +27,8 @@ public class Utilities {
      * @param name the name of the utility tile
      * @param prices the price to buy the utilities tile
      */
-    public Utilities(String name, int num_rolls, Player owner, int prices) {
-        this.owned_player = owner;
+    public Utilities(String name, int num_rolls, int prices) {
+        this.owned_player = null;
         this.num_rolls = num_rolls;
         this.name = name;
         this.price = prices;
@@ -47,6 +47,7 @@ public class Utilities {
      * @return money change to a Player landing on the Utilities
      */
     public int getMoneyChange1(){return 4 * this.num_rolls;}
+
 
     /**
      * returns the name of the Utilities
@@ -75,6 +76,14 @@ public class Utilities {
     }
 
     /**
+     * 
+     * @return the boolean as to whether this utility is owned by a player
+     */
+    public boolean ownedByPlayer(){
+        return this.owned_player != null;
+    }
+
+    /**
      * return the id of the owner
      * @return return this.player_id
      */
@@ -96,6 +105,8 @@ public class Utilities {
     public int getMoneyChange2(int num_roll){return 10 * num_roll;}
 
 }
+
+
 
 
 
