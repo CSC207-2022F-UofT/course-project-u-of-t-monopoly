@@ -17,11 +17,10 @@ public class Player {
 
     boolean playerTurn;
 
-    Jail jail;
 
     int id;
 
-    int getOutofJailFreeCard;
+    int outofJailFreeCard;
 
     public Player(String username, int id) {
         this.username = username;
@@ -31,7 +30,7 @@ public class Player {
         this.inJail = false;
         this.playerTurn = true;
         this.turnsInJail = 0;
-        this.getOutofJailFreeCard = 0;
+        this.outofJailFreeCard = 0;
     }
 
     public String getUsername() {
@@ -127,8 +126,8 @@ public class Player {
         return inJail;
     }
 
-    public void setInJail(boolean inJail) {
-        this.inJail = !inJail;
+    public void setInJail() {
+        this.inJail = true;
     }
 
     public int getTurnsInJail() {
@@ -137,5 +136,11 @@ public class Player {
 
     public void setTurnsInJail(int turnsInJail) {
         this.turnsInJail = turnsInJail;
+    }
+    public int getOutofJailFreeCard(){
+        return this.outofJailFreeCard;
+    }
+    public void addOutOfJailFreeCard() {
+        this.outofJailFreeCard += 1;
     }
 }
