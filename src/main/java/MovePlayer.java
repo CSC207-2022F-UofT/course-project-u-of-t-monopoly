@@ -1,7 +1,9 @@
-package UseCases;
+package UseCase;
 
 import Entity.GameBoard;
 import Entity.Player;
+
+import java.util.ArrayList;
 
 public class MovePlayer {
 
@@ -13,8 +15,8 @@ public class MovePlayer {
         this.gameboard = gameboard;
     }
 
-    public int MovePlayer(int diceroll){
-        this.player.setPlayerPosition(this.player.getPlayerPosition() + diceroll);
+    public int move(ArrayList<Integer> diceroll){
+        this.player.setPlayerPosition(this.player.getPlayerPosition() + diceroll.get(0) + diceroll.get(1));
         return this.player.getPlayerPosition();
     }
 }
