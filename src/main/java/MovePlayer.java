@@ -1,7 +1,7 @@
 package UseCases;
 
-import tutorial.GameBoard;
-import tutorial.Player;
+import Entity.GameBoard;
+import Entity.Player;
 
 public class MovePlayer {
 
