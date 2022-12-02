@@ -143,4 +143,8 @@ public class Player {
     public void addOutOfJailFreeCard() {
         this.outofJailFreeCard += 1;
     }
+    
+    public void useOutOfJailFreeCard() {
+        this.outofJailFreeCard -= 1;
+    }
 }
