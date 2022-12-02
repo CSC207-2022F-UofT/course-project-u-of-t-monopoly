@@ -126,8 +126,8 @@ public class Player {
         return inJail;
     }
 
-    public void setInJail() {
-        this.inJail = true;
+    public void setInJail(boolean state) {
+        this.inJail = state;
     }
 
     public int getTurnsInJail() {
