@@ -18,6 +18,10 @@ public class UserRollDice {
     public UserRollDice(Player player) {
         this.player = player;
     }
+    
+    public UserRollDice(){
+        
+    }
 
     /**
      * This method is used to roll a die and make corresponding changes.
