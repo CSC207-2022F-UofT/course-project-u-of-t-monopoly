@@ -21,6 +21,11 @@ public class Deck {
         chancecardlist.add(new ChanceCard("Go to Jail.",0,0));
     }
 
+     /**
+     * randomly draw a card from deck.
+     * @param cardtype cardtype should only be either "community" or "chance".
+     * @return the drawed card.
+     */
     public OpportunityCard getCard(String cardtype) { // random draw a card from deck
         if (Objects.equals(cardtype, "community")) {
             Random rand = new Random();
@@ -35,7 +40,11 @@ public class Deck {
         }
     }
     // cardtype should only be either "community" or "chance".
-
+     /**
+     * remove "get out of jail" from deck
+     * @param cardtype cardtype should only be either "community" or "chance".
+     * @return if the card is successfully removed, return TRUE, otherwise, FALSE.
+     */
     public boolean updateDeck(String cardtype) { // remove "get out of jail" from deck
         if (Objects.equals(cardtype, "community")) {
             for (CommunityCard communitycard : communitycardlist) {
@@ -55,4 +64,19 @@ public class Deck {
         return false;
     }
     // cardtype should only be either "community" or "chance".
+    /**
+     * add a community card
+     * @param card the community card type object
+     */
+    public void addCommunityCard(CommunityCard card) {
+        this.communitycardlist.add(card);
+    }
+
+    /**
+     * add a chance card
+     * @param card the chance card type object
+     */
+    public void addChanceCard(ChanceCard card) {
+        this.chancecardlist.add(card);
+    }
 }
