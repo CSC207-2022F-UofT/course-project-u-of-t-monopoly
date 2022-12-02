@@ -1,14 +1,10 @@
-package tutorial;
-
+package Entity;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
-
 public class Deck {
-
     ArrayList<CommunityCard> communitycardlist;
     ArrayList<ChanceCard> chancecardlist;
-
     public Deck() {
         communitycardlist = new ArrayList<CommunityCard>();
         communitycardlist.add(new CommunityCard("Advance to \"Go\". (Collect $200)", 200, 0));
