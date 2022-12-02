@@ -1,12 +1,8 @@
-package tutorial;
-
-import java.util.ArrayList;
-import java.util.Random;
+package Entity;
 
 public class CommunityCard extends OpportunityCard{
-    int moneychange;
-    int movement;
     String cardname;
+
 
 
     /**
