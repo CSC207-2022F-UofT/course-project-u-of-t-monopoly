@@ -1,6 +1,7 @@
 package Entity;
 
 import java.util.ArrayList;
+
 import java.util.Random;
 
 public class Player {
@@ -9,7 +10,7 @@ public class Player {
     int money;
     int playerPosition;
     String opportunityCards;
-    ArrayList<Building> buildings = new ArrayList<Building>();
+    ArrayList<TileCanBuy> tile = new ArrayList<TileCanBuy>();
 
     boolean inJail;
 
@@ -86,12 +87,20 @@ public class Player {
         this.money += amount;
     }
 
-    public void addProperty(Building property) {
-        buildings.add(property);
+    public void addProperty(Properties property) {
+        this.tile.add(property);
+    }
+
+    public ArrayList<TileCanBuy> getTile(){
+        return this.tile;
+    }
+
+    public void removeTile(TileCanBuy tileCanBuy) {
+        this.tile.remove(tileCanBuy);
     }
 
     public boolean checkBankruptcy() {
-        if (this.money == 0) {
+        if (this.money <= 0) {
             return true;
         }
         return false;
@@ -143,8 +152,7 @@ public class Player {
     public void addOutOfJailFreeCard() {
         this.outofJailFreeCard += 1;
     }
-    
-    public void useOutOfJailFreeCard() {
-        this.outofJailFreeCard -= 1;
-    }
+
+    public void useOutOfJailFreeCard() {this.outofJailFreeCard -= 1;}
+
 }
