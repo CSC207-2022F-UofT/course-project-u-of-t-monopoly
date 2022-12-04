@@ -1,39 +1,20 @@
-# Project Template
+# U of T Monopoly
+Below are the general rules, functionality, and a brief description of the implementation of our Monopoly game. 
+# Game Rules 
+The monopoly game we have implemented is a 2-4 player interactive gameboard program. Upon initialization of the game, users are prompted to role the dice of the program. After a player rolls a dice the following mutually exclusive events may occur: 
+-	Land on a tile that is not owned by another player. The user is asked if they want to buy it. 
+-	Land on a tile that is owned by another player. The user pays rent based on the number of buildings owned for Properties tiles regular rent for Utilities and RailRoads
+-	Land on a chance or communitycard tile. The user is prompted with action resulting from the associated drawn card 
+-	Land on “Go to Jail” tile. The user is sent to jail, and is given three tries to get out by rolling doubles. If this is not achieved, pay the fine. 
+-	Pass “Go” on a dice roll. The player collects $200 for passing “Go”
+-	The player lands on “Free Parking”. Nothing changes to the Player’s state except for their position. 
+-	The player lands on the “Jail” tile. The player is just visiting, and nothing changes to the player’s state except their position. 
+-	The player lands on the “Income Tax” tile. They lose $200 
+-	The player lands on the “Luxury Tax” tile. They lose $100
+Our Monopoly game continue until there is only one player left who has money to play the game. The rest of the players have been deemed bankrupt at this point. The remaining player is the winner!
+# Running the Program 
+Our Monopoly game is run through a java file, Main.java. Once the file is run, the UI (through Swing) is built, and the user is prompted to enter the number of players. After which each player enters their username. After this initialization, the board game screen (UI) is formed, and the players are asked to start the game by the first player (with player id of 1) to have the first roll. The players are continuously asked to roll the dice, during which the game will follow the rules denoted above. The game continues until only one player is left with a balance in their bank. 
+# Implementation
+As part of our implementation plan, we started at the “high-levels” of the clean architecture framework by coding the entities representing the various noun components of the game. These can be found in the Entity package with the src file. Working from the inside out, we then implemented the Usecases for the program. These can be found in the UseCase package within the SRC file on our project repository. In following clean architecture, we developed various controller classes to send and receive, from the UseCase level the basic inputs needed to update the UI. 
 
-This is a template repository for CSC 207 projects. 
-This repository contains starter code for a gradle project.
-It also contains workflow documents that give instructions on how to manage your Github repository and how to use Github Projects for efficient collaboration.
 
-## Checklist For Your Project
-- [ ] Verify the correct settings for your project repository
-- [ ] Set up Github Projects
-- [ ] Create the implementation plan using issues and Github Projects
-- [ ] Create deveopment branches for your features
-- [ ] Use pull requests to merge finished features into main branch
-- [ ] Conduct code reviews
-
-**If your team has trouble with any of these steps, please ask on Piazza. For example, with how GitHub Classroom works, your team *may* not have permissions to do some of the first few steps, in which case we'll post alternative instructions as needed.**
-
-## Workflow Documents
-
-* Github Workflow: Please refer to the workflow that was introduced in the first lab. You should follow this when working on your code. The following document provides additional details too.
-
-* [Project Planning and Development Guide](project_plan_dev.md): This document helps you to understand how to create and maintain a project plan for your class project. **This document helps you to complete the Implementation Plan Milestone.**
-
-## Gradle Project
-Import this project into your Intellij editor. It should automatically recognise this as a gradle repository.
-The starter code was built using SDK version 11.0.1. Ensure that you are using this version for this project. (You can, of course, change the SDK version as per your requirement if your team has all agreed to use a different version)
-
-You have been provided with two starter files for demonstration: HelloWorld and HelloWorldTest.
-
-You will find HelloWorld in `src/main/java/tutorial` directory. Right click on the HelloWorld file and click on `Run HelloWorld.main()`.
-This should run the program and print on your console.
-
-You will find HelloWorldTest in `src/test/java/tutorial` directory. Right click on the HelloWorldTest file and click on `Run HelloWorldTest`.
-All tests should pass. Your team can remove this sample of how testing works once you start adding your project code to the repo.
-
-Moving forward, we expect you to maintain this project structure. You *should* use Gradle as the build environment, but it is fine if your team prefers to use something else -- just remove the gradle files and push your preferred project setup. Assuming you stick with Gradle, your source code should go into `src/main/java` (you can keep creating more subdirectories as per your project requirement). Every source class can auto-generate a test file for you. For example, open HelloWorld.java file and click on the `HelloWorld` variable as shown in the image below. You should see an option `Generate` and on clicking this your should see an option `Test`. Clicking on this will generate a JUnit test file for `HelloWorld` class. This was used to generate the `HelloWorldTest`.
-
-![image](https://user-images.githubusercontent.com/5333020/196066655-d3c97bf4-fdbd-46b0-b6ae-aeb8dbcf351d.png)
-
-You can create another simple class and try generating a test for this class.
