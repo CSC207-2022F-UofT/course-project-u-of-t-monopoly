@@ -36,7 +36,7 @@ public class Deck {
             Random rand = new Random();
             int upperbound = chancecardlist.size();
             int int_random = rand.nextInt(upperbound);
-            return communitycardlist.get(int_random);
+            return chancecardlist.get(int_random);
         }
     }
     // cardtype should only be either "community" or "chance".
