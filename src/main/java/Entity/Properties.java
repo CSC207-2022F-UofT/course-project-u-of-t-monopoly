@@ -1,10 +1,9 @@
 package Entity;
 
-import javax.lang.model.type.UnionType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Properties {
+public class Properties extends TileCanBuy{
 
     // entity Properties
     private String name;
@@ -27,11 +26,13 @@ public class Properties {
         this.buildingsConstructed = new ArrayList<>();
         this.Owner = null;
     }
-    
+
+    @Override
     public String getName(){
         return this.name;
     }
 
+    @Override
     public int getPrice(){
         // this returns the total price of this property (since the prices are all set to be private
         // in case it might be modified) if a player decide to trade this property.
@@ -41,7 +42,7 @@ public class Properties {
         }
         return result;
     }
-
+    @Override
     public int getRent(){
         // this returns the total rent of this property. When a player need to pay rent, call this
         // method to get the rent amount.
@@ -55,17 +56,22 @@ public class Properties {
     public String getColor(){
         return this.color;
     }
-    
+
+    @Override
     public int getMortgageValue(){
         // call this method when property is being mortgaging.
-        return this.mortgageValue;
+        Integer result = this.mortgageValue;
+        for (Building building : this.buildingsConstructed) {
+            result = result + building.getMortgageValue();
+        }
+        return result;
     }
     
     public List<Building> getBuildingsConstructed(){
         // other classes may need this method.
         return this.buildingsConstructed;
     }
-    
+    @Override
     public Player getOwner(){
         return this.Owner;
     }
@@ -78,14 +84,17 @@ public class Properties {
         return this.buildingsConstructed.size();
     }
 
+    @Override
     public void resetOwner(Player p) {
         // call this method when a property's owner is changed
         this.Owner = p;
     }
-    
+
+    @Override
     public void resetOwner() {
         // call this method when a property is mortgaged.
         this.Owner = null;
+        this.removeBuilding();
     }
 
     public void buildBuilding(Building b) {
