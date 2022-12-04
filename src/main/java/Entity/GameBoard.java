@@ -2,6 +2,8 @@ package Entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Properties;
 import java.util.Random;
 // create a GameBoard class with a list of players and a board (array of properties)
 // The class has methods to find property tiles, by name and index
@@ -10,7 +12,7 @@ import java.util.Random;
 // The class has the functionality to check the game end.
 public class GameBoard {
     private List<Player> players;
-    private Properties[] board = new Properties[40];
+    private ArrayList<Object> board;
     //private int goPosition = 0;
     //private int jailPosition = 30;
     //private int[] chanceCard = new int[]{7, 22, 36};
@@ -31,7 +33,7 @@ public class GameBoard {
      * @param lstProperties
      */
 
-    public GameBoard(List<Player> inputPlayers, Properties[] lstProperties){
+    public GameBoard(List<Player> inputPlayers,  ArrayList<Object> lstProperties){
         this.players = inputPlayers;
         this.board = lstProperties;
     }
@@ -56,7 +58,7 @@ public class GameBoard {
      * Return the list of properties associated with this GameBoard
      * @return this.properties
      */
-    public Properties[] getProperties(){
+    public ArrayList<Object> getProperties(){
         return this.board;
     }
 
@@ -74,8 +76,8 @@ public class GameBoard {
      * @param index
      * @return a properties object given the index
      */
-    public Properties getTile(int index){
-        return board[index];
+    public Object getTile(int index){
+        return board.get(index);
     }
 
     /**
@@ -83,13 +85,14 @@ public class GameBoard {
      * @param place
      * @return the int at which place is located
      */
-    public int getTileIndex(Properties place){
-        for (int i = 0; i <board.length; i++){
-            if (place == board[i]){
-                return i;
-            }
-        }
-    }
+//    public int getTileIndex(Properties place){
+//        for (int i = 0; i <board.length; i++){
+//            if (place == board[i]){
+//                return i;
+//            }
+//        }
+//
+//    }
 
     /**
      * Given the inputted movement, move player along the board (using the player.playerPosition variable
@@ -130,15 +133,30 @@ public class GameBoard {
      * 
      * @return retrun the player object who has the current turn
      */
-    public Player nextTurn(){
-        if (turn == 0){
-            turn +=1;
-        }
-        for (Player person : players){
-            if (person.id == turn % getNumPlayers()){
-                return person;
-                turn += 1;
+//    public Player nextTurn(){
+//        if (turn == 0){
+//            turn +=1;
+//        }
+//        for (Player person : players){
+//            if (person.id == turn % getNumPlayers()){
+//                return person;
+//                turn += 1;
+//            }
+//        }
+//    }
+
+    /**
+     * Given a player, remove the player from players.
+     *
+     */
+
+    public void PlayerOut(Player player){
+        if (this.players.contains(player)){
+            for (TileCanBuy tileCanBuy : player.tile){
+                player.removeTile(tileCanBuy);
+                tileCanBuy.resetOwner();
             }
         }
+        this.players.remove(player);
     }
 }
