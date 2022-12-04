@@ -53,7 +53,7 @@ public class UsergetOpportunityCard {
         this.player.addMoney(this.card.getMoneychange());
         if (Objects.equals(this.card.getCard(), "Get Out of Jail Free.")) {
             this.player.addOutOfJailFreeCard();
-            this.deck.updateDeck(cardtype);
+            this.deck.updateDeck(this.cardtype);
         }
     }
 }
