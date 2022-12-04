@@ -2,16 +2,35 @@
 Below are the general rules, functionality, and a brief description of the implementation of our Monopoly game. 
 # Game Rules 
 The monopoly game we have implemented is a 2-4 player interactive gameboard program. Upon initialization of the game, users are prompted to role the dice of the program. After a player rolls a dice the following mutually exclusive events may occur: 
--	Land on a tile that is not owned by another player. The user is asked if they want to buy it. 
--	Land on a tile that is owned by another player. The user pays rent based on the number of buildings owned for Properties tiles regular rent for Utilities and RailRoads
--	Land on a chance or communitycard tile. The user is prompted with action resulting from the associated drawn card 
--	Land on “Go to Jail” tile. The user is sent to jail, and is given three tries to get out by rolling doubles. If this is not achieved, pay the fine. 
--	Pass “Go” on a dice roll. The player collects $200 for passing “Go”
--	The player lands on “Free Parking”. Nothing changes to the Player’s state except for their position. 
--	The player lands on the “Jail” tile. The player is just visiting, and nothing changes to the player’s state except their position. 
--	The player lands on the “Income Tax” tile. They lose $200 
--	The player lands on the “Luxury Tax” tile. They lose $100
+-	A game has 2 - 4 players
+-	Player starts the game with $1500
+-	Player loses the game when balance < $0
+-	Player can trade with other players between dice rolls
+-	Player rolls 2 dice
+o	If a player rolls double thrice in a row, they go to jail
+-	Jail
+o	Player can still interact with other players (I.e trade, collect rent, etc)
+o	3 turns to roll a double to get out
+o	After three turns, must pay a $50 bail
+-	Buying a Property
+o	Each property has a buy price, mortgage value, and rent value
+-	Mortgage a Property
+o	Player receives the mortgage value
+o	To unmortgage, pay 1.1x mortgage value.
+o	Player cannot collect rent on a mortgaged property
+-	Build House/Hotel
+o	House and hotel have a build cost.
+o	To build a house player must own the full (colour) set
+o	Houses must be built evenly. (I.e. Every property in the set must have 1 house built before player can build a second house)
+o	Player can build a hotel after building 4 houses
+-	Land on Utility
+o	Pay 4x / 10x the number rolled by dice if owner owns 1 / 2 utilities
+-	Land on Railroad
+o	Pay $25 / $50 / $100 / $200 if owner owns 1 / 2 / 3 / 4 railroads
+-	
+
 Our Monopoly game continue until there is only one player left who has money to play the game. The rest of the players have been deemed bankrupt at this point. The remaining player is the winner!
+
 # Running the Program 
 Our Monopoly game is run through a java file, Main.java. Once the file is run, the UI (through Swing) is built, and the user is prompted to enter the number of players. After which each player enters their username. After this initialization, the board game screen (UI) is formed, and the players are asked to start the game by the first player (with player id of 1) to have the first roll. The players are continuously asked to roll the dice, during which the game will follow the rules denoted above. The game continues until only one player is left with a balance in their bank. 
 # Implementation
