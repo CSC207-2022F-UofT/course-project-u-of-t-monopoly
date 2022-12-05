@@ -1,0 +1,24 @@
+package UseCase;
+
+import Entity.Jail;
+import Entity.Player;
+
+public class SpentTurnsInJail {
+
+    private Jail jail;
+
+    public SpentTurnsInJail(Jail jail) {
+        this.jail = jail;
+    }
+
+    public void Spend() {
+        // this method should ONLY be called when a turn ends.
+        for (Player player : this.jail.getPlayers()){
+            player.setTurnsInJail(player.getTurnsInJail() - 1);
+            if (player.getTurnsInJail() == 0){
+                player.setInJail(false);
+                this.jail.removePlayer(player);
+            }
+        }
+    }
+}
