@@ -87,8 +87,8 @@ public class Player {
         this.money += amount;
     }
 
-    public void addProperty(Properties property) {
-        this.tile.add(property);
+    public void addProperty(TileCanBuy tileCanBuy) {
+        this.tile.add(tileCanBuy);
     }
 
     public ArrayList<TileCanBuy> getTile(){
