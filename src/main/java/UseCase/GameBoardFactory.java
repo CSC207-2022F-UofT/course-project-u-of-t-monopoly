@@ -24,6 +24,7 @@ public class GameBoardFactory {
         lst.add("Income Tax"); //minus 200 //done
         lst.add(new RailRoad("Reading RailRoad", 200));//done
         lst.add(new Properties("Oriental Avenue", 100, 6, "Light Blue", 50));//done
+        lst.add("Chance Card");
         lst.add(new Properties("Vermont Avenue", 100, 6, "Light Blue", 50));//done
         lst.add(new Properties("Connecticut Avenue", 120, 8, "Light Blue", 60));//done
         lst.add(new Jail()); //done
