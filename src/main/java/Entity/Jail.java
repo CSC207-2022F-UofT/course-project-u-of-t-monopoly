@@ -7,9 +7,11 @@ package Entity;
 import java.util.ArrayList;
 
 public class Jail {
-    Player player;
+    private Player player;
     private int turnsInJail;
     private boolean inJail;
+    private ArrayList<Players> players;
+    
 
     /**
      * Initialize Jail Object
@@ -20,6 +22,15 @@ public class Jail {
         player = p;
         turnsInJail = 0;
         inJail = true;
+    }
+    
+     /**
+     * Initialize Jail Object with no parameters, in case we have different usage for jail class
+     *
+     * 
+     */
+    public Jail() {
+        this.players = new ArrayList<>();
     }
 
     /**
