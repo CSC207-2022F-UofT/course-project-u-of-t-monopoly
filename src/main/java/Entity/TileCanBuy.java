@@ -1,5 +1,9 @@
 package Entity;
 
+/**
+ * Abstract parent class to the Properties, Utilities, RailRoad Entities (all of which 
+ * can be purchased by a Player) 
+ */
 public abstract class TileCanBuy {
 
 
