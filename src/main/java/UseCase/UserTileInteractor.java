@@ -5,6 +5,9 @@ import Entity.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Class to buy, getName, getRent, payRent, and MortgageToPay TileCanBuy Objects
+ */
 public class UserTileInteractor {
 
     private TileCanBuy tileCanBuy;
@@ -12,8 +15,18 @@ public class UserTileInteractor {
 
     private GameBoard board;
 
+    /**
+     * Instantiate a UserTIleInteractor
+     * @param tileCanBuy Object tile to be interacted with
+     * @param player the Player object associated with the TileCanBuy Object
+     * @param board the GameBoard keeping track of the state of the game
+     */
     public UserTileInteractor(TileCanBuy tileCanBuy, Player player, GameBoard board) {this.tileCanBuy = tileCanBuy;this.player = player;this.board = board;}
 
+    /**
+     * A method to buy the TileCanBuy object
+     * @return a String as to whether purchase was successful
+     */
     public String buy(){
         if (this.player.getMoney() >= tileCanBuy.getPrice()){
             if (tileCanBuy.getOwner() == null){
@@ -25,9 +38,18 @@ public class UserTileInteractor {
         return "Not Enough Money";
     }
 
+    /**
+     * Return the name of the TileCanBuy variable
+     * @return the name of the TileCanBuy Object
+     */
     public String getName(){return tileCanBuy.getName();}
 
 
+    /**
+     * Return the rent of the tile
+     * @param rolls the amount rolled on a Players last turn
+     * @return the amount of rent to be paid
+     */
     public int getRent(ArrayList<Integer> rolls){
         if (tileCanBuy instanceof Utilities) {
             int counter = 0;
@@ -51,22 +73,27 @@ public class UserTileInteractor {
     public String payRent(ArrayList<Integer> rolls){
         Player owner = tileCanBuy.getOwner();
         int amount = this.getRent(rolls);
-            if (player.getMoney() < amount){
-                String message = this.MortgageToPay(amount);
-                if (Objects.equals(message, "Bankrupt")){
-                    owner.addMoney(this.player.getMoney());
-                    this.player.loseMoney(this.player.getMoney());
-                }
-                return message;
+        if (player.getMoney() < amount){
+            String message = this.MortgageToPay(amount);
+            if (Objects.equals(message, "Bankrupt")){
+                owner.addMoney(this.player.getMoney());
+                this.player.loseMoney(this.player.getMoney());
             }
-            else {
-                player.loseMoney(tileCanBuy.getRent());
-                owner.addMoney(tileCanBuy.getRent());
-                return "Paid Rent to " + owner.getUsername();
-            }
+            return message;
         }
+        else {
+            player.loseMoney(tileCanBuy.getRent());
+            owner.addMoney(tileCanBuy.getRent());
+            return "Paid Rent to " + owner.getUsername();
+        }
+    }
 
 
+    /**
+     * If not enough money is available for a Player to pay rent, taxes etc, mortgage their Properties
+     * @param required the required tax, rent, etc, to be paid
+     * @return a message indicating if the Player is bankrupt or if they mortgaged their Properties
+     */
     public String MortgageToPay(Integer required) {
         TileCanBuy t;
         ArrayList<TileCanBuy> lst = new ArrayList<>();
