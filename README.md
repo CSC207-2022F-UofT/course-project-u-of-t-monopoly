@@ -1,12 +1,15 @@
 # U of T Monopoly
 Below are the general rules, functionality, and a brief description of the implementation of our Monopoly game. 
 # Game Rules 
-The monopoly game we have implemented is a 2-4 player interactive gameboard program. Upon initialization of the game, users are prompted to role the dice of the program. After a player rolls a dice the following mutually exclusive events may occur: 
--	A game has 2 - 4 players
--	Player starts the game with $1500
+The monopoly game we have implemented is a 2-4 player interactive gameboard program. Upon initialization of the game, users are prompted to role the dice of the program. Each player starts the game with $1500.00. After a player rolls a dice the following mutually exclusive events may occur: 
 -	Player loses the game when balance < $0
 -	Player can trade with other players between dice rolls
 -	Player rolls 2 dice
+- If a player lands on or passes Go they collect $200
+- If a player lands on Free Parking or Just Visiting In Jail, nothing happens
+- If a player lands on Go To Jail, they Go TO Jail without collecting $200 if they pass Go
+- If a player lands on Income Tax, they lose $200
+- If a player lands on Luxury Tax they lose $100
 o	If a player rolls double thrice in a row, they go to jail
 -	Jail
 o	Player can still interact with other players (I.e trade, collect rent, etc)
