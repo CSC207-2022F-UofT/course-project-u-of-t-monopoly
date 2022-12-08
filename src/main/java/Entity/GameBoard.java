@@ -11,7 +11,7 @@ import java.util.Random;
 // The class can move players, add players, and set the next turn (to a player)
 // The class has the functionality to check the game end.
 public class GameBoard {
-    private List<Player> players;
+    private ArrayList<Player> players;
     private ArrayList<Object> board;
     //private int goPosition = 0;
     //private int jailPosition = 30;
@@ -50,7 +50,7 @@ public class GameBoard {
      * Return the list of players asscociated with this GameBoard
      * @return this.players
      */
-    public List<Player> getPlayers(){
+    public ArrayList<Player> getPlayers(){
         return this.players;
     }
 
