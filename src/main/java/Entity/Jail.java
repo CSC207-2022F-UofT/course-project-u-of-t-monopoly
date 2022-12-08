@@ -88,4 +88,21 @@ public class Jail {
     public void setInJail(boolean inJail) {
         this.inJail = inJail;
     }
+    
+    /**
+     * Remove player from the jail
+     * @param player
+     */
+    public void removePlayer(Player player) {
+        this.players.remove(player);
+    }
+    
+    /**
+     * Set player to the jail
+     * @param player
+     */
+    public void addPlayer(Player player) {
+        this.players.add(player);
+    }
+}
 }
