@@ -30,7 +30,7 @@ public class PlayerGoToJailProcessor{
         if(this.player.getPlayerPosition() == 30) {
             if(this.player.isInJail() == false ){
                 this.player.setInJail(true);
-                this.player.setPlayerPosition(10); // an input in setPlayerPosition would be the index position of the jail cell
+                this.player.setPlayerPosition(9); // an input in setPlayerPosition would be the index position of the jail cell
                 this.player.setTurnsInJail(3);
                 return true;
             }
