@@ -152,7 +152,7 @@ public class GameBoard {
 
     public void PlayerOut(Player player){
         if (this.players.contains(player)){
-            for (TileCanBuy tileCanBuy : player.tile){
+            for (TileCanBuy tileCanBuy : player.getTile()){
                 player.removeTile(tileCanBuy);
                 tileCanBuy.resetOwner();
             }
