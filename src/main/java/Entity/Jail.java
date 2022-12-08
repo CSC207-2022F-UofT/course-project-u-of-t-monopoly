@@ -65,14 +65,26 @@ public class Jail {
         return turnsInJail;
     }
 
+    /**
+     * Set the amount of turns taken in jail 
+     * @param turnsInJail the amount of turns taken in jail 
+     */
     public void setTurnsInJail(int turnsInJail) {
         this.turnsInJail = turnsInJail;
     }
 
+    /**
+     * Get the boolean for whether the player is in jail or not 
+     * @return true if the Player is in Jail, false otherwise 
+     */
     public boolean getInJail() {
         return inJail;
     }
 
+    /**
+     * set the in jail boolean to false or true 
+     * @param inJail true if the Player is in jail, false otherwise 
+     */
     public void setInJail(boolean inJail) {
         this.inJail = inJail;
     }
