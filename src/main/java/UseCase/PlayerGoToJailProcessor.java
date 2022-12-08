@@ -11,7 +11,7 @@ public class PlayerGoToJailProcessor{
 
     private Player player;
     private GameBoard gameboard;
-
+    private Jail jail;
     /**
      * Instantiate a new PlayerGoToJailProcessor 
      * @param player the Player object to be updated 
@@ -20,7 +20,7 @@ public class PlayerGoToJailProcessor{
     public PlayerGoToJailProcessor(Player player, GameBoard gameboard){
         this.player = player;
         this.gameboard = gameboard;
-
+        this.jail = (Jail) gameboard.getTile(9);
     }
 
     /**
