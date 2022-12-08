@@ -33,7 +33,7 @@ public class GameBoard {
      * @param lstProperties
      */
 
-    public GameBoard(List<Player> inputPlayers,  ArrayList<Object> lstProperties){
+    public GameBoard(ArrayList<Player> inputPlayers,  ArrayList<Object> lstProperties){
         this.players = inputPlayers;
         this.board = lstProperties;
     }
