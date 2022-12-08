@@ -38,7 +38,7 @@ public class Jail {
      * @param player: a player
      */
     public void removePlayer(Player player) {
-        this.players.remove(player);
+        this.players.remove(players.indexOf(player));
     }
 
 
