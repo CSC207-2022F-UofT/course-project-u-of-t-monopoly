@@ -2,6 +2,7 @@ package UseCase;
 
 import Entity.Player;
 import Entity.GameBoard;
+import Entity.Jail;
 
 /**
  * A use case class to set, check, and update the Players position in jail 
