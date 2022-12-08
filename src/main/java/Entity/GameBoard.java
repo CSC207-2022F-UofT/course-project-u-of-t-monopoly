@@ -152,9 +152,10 @@ public class GameBoard {
 
     public void PlayerOut(Player player){
         if (this.players.contains(player)){
-            for (TileCanBuy tileCanBuy : player.getTile()){
-                player.removeTile(tileCanBuy);
-                tileCanBuy.resetOwner();
+            ArrayList<TileCanBuy> tiles = (ArrayList<TileCanBuy>) player.getTile().clone();
+            for (TileCanBuy tile : tiles){
+                player.removeTile(tile);
+                tile.resetOwner();
             }
         }
         this.players.remove(player);
