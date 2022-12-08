@@ -3,14 +3,25 @@ package UseCase;
 import Entity.Jail;
 import Entity.Player;
 
+/**
+ * Class to check the number of times a Player has spent in jail and update the new 
+ * Player variable 
+ */
 public class SpentTurnsInJail {
 
     private Jail jail;
 
+    /**
+     * Instantiate a new SpentTurnsInJail object 
+     * @param jail the Jail object associated with this class
+     */
     public SpentTurnsInJail(Jail jail) {
         this.jail = jail;
     }
 
+    /**
+     * Update the Players turns in jail variable
+     */
     public void Spend() {
         // this method should ONLY be called when a turn ends.
         for (Player player : this.jail.getPlayers()){
