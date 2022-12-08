@@ -5,10 +5,16 @@ import Entity.*;
 
 import java.util.ArrayList;
 
+/**
+ * A class for creating a GameBoard object based on the Properties and tiles list inputted
+ */
 public class GameBoardFactory {
 
     public GameBoard gameBoard;
 
+    /**
+     * Create a GameBoard object based on the tiles of the Monopoly game
+     */
     public GameBoardFactory(){
         ArrayList<Object> lst= new ArrayList<>(40);
         lst.add("Go"); //done
@@ -55,9 +61,17 @@ public class GameBoardFactory {
         this.gameBoard = new GameBoard(players, lst);
     }
 
+    /**
+     * getter method to return this GameBoard object
+     * @return the GameBoard object of the GameBoard factory
+     */
     public GameBoard getGameBoard() {
         return this.gameBoard;
     }
 
+    /**
+     * return the list of players associated with the this.gameBoard object
+     * @return the players list for this gameBoard
+     */
     public ArrayList<Player> getPlayers(){return this.gameBoard.getPlayers();}
 }
