@@ -21,6 +21,10 @@ public class Jail {
         turnsInJail = 0;
         inJail = true;
     }
+    
+    public Jail() {
+        this.players = new ArrayList<>();
+    }
 
     /**
      * While suspended, Player can attempt to roll doubles to get out
