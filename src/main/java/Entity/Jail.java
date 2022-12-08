@@ -14,13 +14,8 @@ public class Jail {
     /**
      * Initialize Jail Object
      *
-     * @param p Player
+     * 
      */
-    public Jail(Player p) {
-        player = p;
-        turnsInJail = 0;
-        inJail = true;
-    }
     
     public Jail() {
         this.players = new ArrayList<>();
@@ -68,16 +63,20 @@ public class Jail {
     public int getTurnsInJail() {
         return turnsInJail;
     }
-
-    public void setTurnsInJail(int turnsInJail) {
-        this.turnsInJail = turnsInJail;
+    
+    /**
+     * Remove player from the jail
+     * @param player
+     */
+    public void removePlayer(Player player) {
+        this.players.remove(player);
     }
-
-    public boolean getInJail() {
-        return inJail;
-    }
-
-    public void setInJail(boolean inJail) {
-        this.inJail = inJail;
+    
+    /**
+     * Set player to the jail
+     * @param player
+     */
+    public void addPlayer(Player player) {
+        this.players.add(player);
     }
 }
