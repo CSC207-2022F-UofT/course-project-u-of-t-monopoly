@@ -1,8 +1,7 @@
-package UseCase;
-import Entity.*;
+package use_case;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import entity.*;
 import java.util.ArrayList;
 
 public class BuildProcessorTest {
