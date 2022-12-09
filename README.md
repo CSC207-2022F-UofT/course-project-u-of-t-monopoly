@@ -1,39 +1,42 @@
-# Project Template
+# U of T Monopoly
+Below are the general rules, functionality, and a brief description of the implementation of our Monopoly game. 
+# Game Rules 
+The monopoly game we have implemented is a 2-4 player interactive gameboard program. Upon initialization of the game, users are prompted to role the dice of the program. Each player starts the game with $1500.00. After a player rolls a dice the following mutually exclusive events may occur: 
+-	Player loses the game when balance < $0
+-	Player can trade with other players between dice rolls
+-	Player rolls 2 dice
+- If a player lands on or passes Go they collect $200
+- If a player lands on Free Parking or Just Visiting In Jail, nothing happens
+- If a player lands on Go To Jail, they Go TO Jail without collecting $200 if they pass Go
+- If a player lands on Income Tax, they lose $200
+- If a player lands on Luxury Tax they lose $100
+o	If a player rolls double thrice in a row, they go to jail
+-	Jail
+o	Player can still interact with other players (I.e trade, collect rent, etc)
+o	3 turns to roll a double to get out
+o	After three turns, must pay a $50 bail
+-	Buying a Property
+o	Each property has a buy price, mortgage value, and rent value
+-	Mortgage a Property
+o	Player receives the mortgage value
+o	To unmortgage, pay 1.1x mortgage value.
+o	Player cannot collect rent on a mortgaged property
+-	Build House/Hotel
+o	House and hotel have a build cost.
+o	To build a house player must own the full (colour) set
+o	Houses must be built evenly. (I.e. Every property in the set must have 1 house built before player can build a second house)
+o	Player can build a hotel after building 4 houses
+-	Land on Utility
+o	Pay 4x / 10x the number rolled by dice if owner owns 1 / 2 utilities
+-	Land on Railroad
+o	Pay $25 / $50 / $100 / $200 if owner owns 1 / 2 / 3 / 4 railroads
+-	
 
-This is a template repository for CSC 207 projects. 
-This repository contains starter code for a gradle project.
-It also contains workflow documents that give instructions on how to manage your Github repository and how to use Github Projects for efficient collaboration.
+Our Monopoly game continue until there is only one player left who has money to play the game. The rest of the players have been deemed bankrupt at this point. The remaining player is the winner!
 
-## Checklist For Your Project
-- [ ] Verify the correct settings for your project repository
-- [ ] Set up Github Projects
-- [ ] Create the implementation plan using issues and Github Projects
-- [ ] Create deveopment branches for your features
-- [ ] Use pull requests to merge finished features into main branch
-- [ ] Conduct code reviews
+# Running the Program 
+Our Monopoly game is run through a java file, Main.java. Once the file is run, the UI (through Swing) is built, and the user is prompted to enter the number of players. After which each player enters their username. After this initialization, the board game screen (UI) is formed, and the players are asked to start the game by the first player (with player id of 1) to have the first roll. The players are continuously asked to roll the dice, during which the game will follow the rules denoted above. The game continues until only one player is left with a balance in their bank. 
+# Implementation
+As part of our implementation plan, we started at the “high-levels” of the clean architecture framework by coding the entities representing the various noun components of the game. These can be found in the Entity package with the src file. Working from the inside out, we then implemented the Usecases for the program. These can be found in the UseCase package within the SRC file on our project repository. In following clean architecture, we developed various controller classes to send and receive, from the UseCase level the basic inputs needed to update the UI. 
 
-**If your team has trouble with any of these steps, please ask on Piazza. For example, with how GitHub Classroom works, your team *may* not have permissions to do some of the first few steps, in which case we'll post alternative instructions as needed.**
 
-## Workflow Documents
-
-* Github Workflow: Please refer to the workflow that was introduced in the first lab. You should follow this when working on your code. The following document provides additional details too.
-
-* [Project Planning and Development Guide](project_plan_dev.md): This document helps you to understand how to create and maintain a project plan for your class project. **This document helps you to complete the Implementation Plan Milestone.**
-
-## Gradle Project
-Import this project into your Intellij editor. It should automatically recognise this as a gradle repository.
-The starter code was built using SDK version 11.0.1. Ensure that you are using this version for this project. (You can, of course, change the SDK version as per your requirement if your team has all agreed to use a different version)
-
-You have been provided with two starter files for demonstration: HelloWorld and HelloWorldTest.
-
-You will find HelloWorld in `src/main/java/tutorial` directory. Right click on the HelloWorld file and click on `Run HelloWorld.main()`.
-This should run the program and print on your console.
-
-You will find HelloWorldTest in `src/test/java/tutorial` directory. Right click on the HelloWorldTest file and click on `Run HelloWorldTest`.
-All tests should pass. Your team can remove this sample of how testing works once you start adding your project code to the repo.
-
-Moving forward, we expect you to maintain this project structure. You *should* use Gradle as the build environment, but it is fine if your team prefers to use something else -- just remove the gradle files and push your preferred project setup. Assuming you stick with Gradle, your source code should go into `src/main/java` (you can keep creating more subdirectories as per your project requirement). Every source class can auto-generate a test file for you. For example, open HelloWorld.java file and click on the `HelloWorld` variable as shown in the image below. You should see an option `Generate` and on clicking this your should see an option `Test`. Clicking on this will generate a JUnit test file for `HelloWorld` class. This was used to generate the `HelloWorldTest`.
-
-![image](https://user-images.githubusercontent.com/5333020/196066655-d3c97bf4-fdbd-46b0-b6ae-aeb8dbcf351d.png)
-
-You can create another simple class and try generating a test for this class.
