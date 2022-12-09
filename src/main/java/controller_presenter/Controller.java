@@ -1,10 +1,7 @@
-package ControllerPresenter;
+package controller_presenter;
 
-import Entity.GameBoard;
-import Entity.Jail;
-import Entity.Player;
-import Entity.TileCanBuy;
-import UseCase.*;
+import entity.*;
+import use_case.*;
 
 import java.util.ArrayList;
 import java.util.Objects;
