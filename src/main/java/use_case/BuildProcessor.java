@@ -1,8 +1,8 @@
-package UseCase;
+package use_case;
 
-import Entity.*;
+import entity.*;
 
-import java.util.Dictionary;
+//import java.util.Dictionary;
 
 /**
  * BuildProcessor class to check if a House or Hotel can be built given a Player object and a Properties
